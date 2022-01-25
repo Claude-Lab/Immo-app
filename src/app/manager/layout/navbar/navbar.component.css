@@ -232,29 +232,4 @@
   color: red;
 }
 
-.icon-ban {
-  color: darkred;
-}
 
-.icon-check {
-  color: #117e02;
-}
-
-/** Integration vidéo iframe */
-.iframe iframe {
-  left: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.button-save {
-  background-color: rgba(152, 73, 62, 0.85);
-  color: white;
-}
-
-.button-cancel {
-  background-color: rgba(62, 107, 152, 0.85);
-  color: white;
-}
