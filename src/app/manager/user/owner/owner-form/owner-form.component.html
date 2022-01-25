@@ -1,0 +1,30 @@
+<form [formGroup]="ownerForm" (ngSubmit)="onFormSubmit()">
+  <div class="uk-modal-body" uk-overflow-auto>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="firstname" placeholder="Prénom">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="lastname" placeholder="Nom">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="email" formControlName="email" placeholder="Adresse email">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="mobile" placeholder="Téléphone mobile">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="phone" placeholder="Téléphone fixe">
+    </div>
+
+  </div>
+
+  <div class="uk-modal-footer uk-text-right">
+    <button class="uk-button uk-button-default uk-modal-close uk-margin-small-right" type="button">Annuler</button>
+    <button class="uk-button uk-button-valid " type="button">Ajouter le locataire</button>
+  </div>
+</form>
