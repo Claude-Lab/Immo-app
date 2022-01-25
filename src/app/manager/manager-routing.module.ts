@@ -11,6 +11,7 @@ const routes: Routes = [
         path: '', component: ManagerComponent,
         children: [
           { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+          { path: 'users', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
           { path: '', redirectTo: 'home', pathMatch: 'full' },
           { path: '**', redirectTo: 'home' }
         ]
