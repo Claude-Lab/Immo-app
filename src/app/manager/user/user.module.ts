@@ -20,8 +20,7 @@ import {AdminModule} from "./admin/admin.module";
     TenantModule,
     OwnerModule,
     GuarantorModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    HttpClientModule
   ],
   exports: [UserComponent],
   providers: [UserApiService]
