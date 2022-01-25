@@ -1,1 +1,65 @@
-<p>owner works!</p>
+<div uk-grid="" class="uk-child-width-1-1@s uk-child-width-1-1@l uk-grid uk-grid-stack">
+  <div class="uk-first-column">
+
+
+    <div class="uk-card uk-card-default">
+      <div class="uk-card-header">
+        Liste des propriétaires
+        <a class="uk-button uk-button-primary uk-button-small uk-align-right@m" href="#modal-insert-owner"
+           uk-toggle>Ajouter un
+          propriétaire</a>
+      </div>
+
+      <div class="uk-card-body">
+        <div class="uk-spinner-table uk-align-center" *ngIf="loading" uk-spinner="ratio: 3"></div>
+        <div *ngIf="users == null && loading == false" class="uk-placeholder uk-text-center">
+          <h5>Aucun utilisateur à afficher</h5>
+          <p>Il semblerait qu'il n'y ait pas d'utilisateur correspondant à votre recherche.</p>
+        </div>
+        <table *ngIf="users" class="uk-table uk-table-responsive">
+          <thead>
+          <tr *ngIf="!loading">
+            <th *ngFor="let col of displayedColumns">
+              {{ col }}
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <!-- <td *ngFor="let col of index">
+              {{ tenant[col] }}
+            </td> -->
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.mobile }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <a href="#">
+                <button type="button"
+                        class="uk-button-small uk-button-primary uk-width-1-1 uk-margin uk-animation-slide-left-medium">Detail</button>
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                <button type="button"
+                        class="uk-button-small uk-button-secondary uk-width-1-1 uk-margin uk-animation-slide-right-medium">Modifier</button>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-insert-owner" uk-modal="bg-close: false">
+  <div class="uk-modal-dialog">
+
+    <div class="uk-modal-header">
+      <h2 class="uk-modal-title">Ajouter un propriétaire</h2>
+    </div>
+    <div class="uk-modal-body" uk-overflow-auto>
+      <app-owner-form></app-owner-form>
+    </div>
+
+  </div>
+</div>
