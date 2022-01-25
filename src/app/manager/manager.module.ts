@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {ManagerComponent} from "./manager.component";
 import {ManagerRoutingModule} from "./manager-routing.module";
 import {HomeModule} from "./home/home.module";
-import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -14,7 +13,6 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     HomeModule,
     ManagerRoutingModule,
-    HttpClientModule,
   ],
   exports: [
     ManagerComponent
