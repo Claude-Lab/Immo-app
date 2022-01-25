@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ManagerComponent} from "./manager.component";
 import {ManagerRoutingModule} from "./manager-routing.module";
 import {HomeModule} from "./home/home.module";
+import {UserModule} from "./user/user.module";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {HomeModule} from "./home/home.module";
     CommonModule,
     HomeModule,
     ManagerRoutingModule,
+    UserModule
   ],
   exports: [
     ManagerComponent
