@@ -1,0 +1,54 @@
+<form [formGroup]="tenantForm" (ngSubmit)="onFormSubmit()">
+  <div class="uk-modal-body" uk-overflow-auto>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="firstname" placeholder="Prénom">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="lastname" placeholder="Nom">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="email" formControlName="email" placeholder="Adresse email">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="mobile" placeholder="Téléphone mobile">
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="phone" placeholder="Téléphone fixe">
+    </div>
+    <!-- <div class="uk-margin"> -->
+    <!--  {{ form_widget(form.guarantor) }} -->
+    <!--  </div> -->
+
+
+    <div class="uk-margin-small uk-card-address-before uk-card-default uk-card-body">
+      <p class="uk-text-primary">Indiquez l'adresse précédente du locataire</p>
+      <p class="uk-text-danger">(avant son eménagement)</p>
+      <div class="uk-margin">
+        <input class="uk-input" type="text" formControlName="tenantAddressBefore.street" placeholder="N° et rue">
+      </div>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" formControlName="tenantAddressBefore.postCode" placeholder="Code postal">
+      </div>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" formControlName="tenantAddressBefore.city" placeholder="Ville">
+      </div>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" formControlName="tenantAddressBefore.country" placeholder="Pays">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="uk-modal-footer uk-text-right">
+    <button class="uk-button uk-button-default uk-modal-close uk-margin-small-right" type="button">Annuler</button>
+    <button class="uk-button uk-button-valid " type="button">Ajouter le locataire</button>
+  </div>
+</form>

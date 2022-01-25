@@ -1,0 +1,61 @@
+<div data-uk-grid="" class="uk-child-width-1-1@s uk-child-width-1-1@l uk-grid uk-grid-stack">
+  <div class="uk-first-column">
+
+
+    <div class="uk-card uk-card-default">
+      <div class="uk-card-header">
+        Liste des locataires
+        <a class="uk-button uk-button-primary uk-button-small uk-align-right@m" href="#modal-insert-tenant"
+           data-uk-toggle>Ajouter un locataire</a>
+      </div>
+
+
+      <div class="uk-card-body">
+        <div class="uk-spinner-table uk-align-center" *ngIf="loading" data-uk-spinner="ratio: 3"></div>
+        <div *ngIf="users == null && loading == false" class="uk-placeholder uk-text-center">
+          <h5>Aucun utilisateur à afficher</h5>
+          <p>Il semblerait qu'il n'y ait pas d'utilisateur correspondant à votre recherche.</p>
+        </div>
+        <table *ngIf="users" class="uk-table uk-table-responsive">
+          <thead>
+          <tr *ngIf="!loading">
+            <th *ngFor="let col of displayedColumns">
+              {{ col }}
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.mobile }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <a href="#">
+                <button type="button"
+                        class="uk-button-small uk-button-primary uk-width-1-1 uk-margin uk-animation-slide-left-medium">Detail</button>
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                <button type="button"
+                        class="uk-button-small uk-button-secondary uk-width-1-1 uk-margin uk-animation-slide-right-medium">Modifier</button>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-insert-tenant" data-uk-modal="bg-close: false">
+  <div class="uk-modal-dialog">
+
+    <div class="uk-modal-header">
+      <h2 class="uk-modal-title">Ajouter un locataire</h2>
+    </div>
+    <app-tenant-form></app-tenant-form>
+  </div>
+
+</div>
